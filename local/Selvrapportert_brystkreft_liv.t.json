@@ -22,9 +22,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "9.0.0",
+      "sem_ver" : "10.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "cf753b19bf944b3d6e7a5b5c58860172",
+      "MD5-CAM-1.0.1" : "f00bf4c6e0b20e52b9971d64f052478c",
       "PARENT:MD5-CAM-1.0.1" : "BBA2C8A4A40921B9CD67FB733F13FBBF"
     },
     "details" : {
@@ -384,7 +384,6 @@
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "OBSERVATION",
-      "occurrences" : "1..1",
       "nodeId" : "at0000.1",
       "attributes" : [ {
         "@type" : "C_ATTRIBUTE",
@@ -414,7 +413,6 @@
                     "children" : [ {
                       "@type" : "C_COMPLEX_OBJECT",
                       "rmTypeName" : "ELEMENT",
-                      "occurrences" : "0..1",
                       "nodeId" : "at0034.1",
                       "attributes" : [ {
                         "@type" : "C_ATTRIBUTE",
@@ -582,7 +580,16 @@
                             "children" : [ {
                               "@type" : "C_COMPLEX_OBJECT",
                               "rmTypeName" : "DV_DATE_TIME",
-                              "attributes" : [ ],
+                              "attributes" : [ {
+                                "@type" : "C_ATTRIBUTE",
+                                "rmAttributeName" : "value",
+                                "children" : [ {
+                                  "@type" : "C_DATE_TIME",
+                                  "rmTypeName" : "DATE_TIME",
+                                  "patternedConstraint" : "yyyy-XX-XXTXX:XX:XX",
+                                  "constraint" : [ ]
+                                } ]
+                              } ],
                               "attributeTuples" : [ ]
                             }, {
                               "@type" : "C_COMPLEX_OBJECT",
@@ -608,6 +615,13 @@
                           } ],
                           "attributeTuples" : [ ]
                         }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..0",
+                          "nodeId" : "at0025.1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        }, {
                           "@type" : "C_ARCHETYPE_ROOT",
                           "rmTypeName" : "CLUSTER",
                           "occurrences" : "0..1",
@@ -616,13 +630,6 @@
                           "attributeTuples" : [ ],
                           "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-anatomical_location-001.v1",
                           "referenceType" : "archetypeOverlay"
-                        }, {
-                          "@type" : "C_COMPLEX_OBJECT",
-                          "rmTypeName" : "ELEMENT",
-                          "occurrences" : "0..0",
-                          "nodeId" : "at0025.1",
-                          "attributes" : [ ],
-                          "attributeTuples" : [ ]
                         } ]
                       } ],
                       "attributeTuples" : [ ]
@@ -649,32 +656,6 @@
             "text" : "(Synthesized)",
             "code" : "ac0.1",
             "description" : ""
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Carried out?",
-            "description" : "Is there a history of the identified procedure being done or carried out?",
-            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "Unsure",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "Unsure",
-            "description" : ""
-          },
-          "at0005.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Carried out?",
-            "description" : "Is there a history of the identified procedure being done or carried out?",
-            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
           }
         },
         "nb" : {
@@ -711,37 +692,6 @@
             "text" : "Tidsangivelse for innsetting av brystimplantat",
             "description" : "Tidsangivelse for prosedyren.",
             "comment" : "Dataelementet \"Tidsangivelse\" er med hensikt løst modellert for å støtte ulike måter å angi tidsangivelser for prosedyrer i et spørreskjema. Den konkrete semantikken defineres i templatet. For eksempel: Prosedyrens faktiske dato og/eller klokkeslett, start- og slutttid for prosedyren, et tidsintervall for når prosedyren ble gjort, varigheten av prosedyren, individets alder på tidspunktet for prosedyren, eller hvor lenge det siden den ble gjort. Kan være en deldato, for eksempel bare år, ved å bruke datatypen DV_DATE_TIME."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Utført?",
-            "description" : "Har den identifiserte prosedyren vært utført?",
-            "comment" : "Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN."
-          },
-          "at0038" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0038",
-            "text" : "Ukjent",
-            "description" : ""
-          },
-          "at0039" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0039",
-            "text" : "Ukjent",
-            "description" : ""
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "Usikker",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "Usikker",
-            "description" : ""
           }
         },
         "de" : {
@@ -750,60 +700,6 @@
             "text" : "*(Synthesized) (en)",
             "code" : "ac0.1",
             "description" : ""
-          },
-          "at0004" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Name der Prozedur",
-            "description" : "Name einer Prozedur oder einer Gruppe von Prozeduren.",
-            "comment" : "Die Codierung des „Name der Prozedur“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Durchgeführt?",
-            "description" : "Gibt es eine Historie, in der das identifizierte Verfahren durchgeführt oder ausgeführt wurde?",
-            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem der Choice-Datentyp DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
-          },
-          "at0037" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Zeitangaben",
-            "description" : "Zeitpunkt der Prozedur.",
-            "comment" : "Angabe des Zeitplans im Zusammenhang mit der Untersuchung. Kommentar: Das Datenelement „Zeitpunkt“ wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Durchführung eines Verfahrens verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter geklärt werden. Zum Beispiel: das tatsächliche Datum und/oder die tatsächliche Uhrzeit; die Start- und Endzeit des Verfahrens; das Zeitintervall, in dem das Verfahren durchgeführt wurde; die Dauer des Verfahrens; das Alter der Person zum Zeitpunkt des Verfahrens; oder die Zeitdauer seit dem Verfahren. Ein Teildatum ist unter Verwendung des Datentyps DV_DATE_TIME gültig, um nur ein Jahr zu erfassen."
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "Unsicher",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "Unsicher",
-            "description" : ""
-          },
-          "at0004.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Name der Prozedur",
-            "description" : "Name einer Prozedur oder einer Gruppe von Prozeduren.",
-            "comment" : "Die Codierung des „Name der Prozedur“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
-          },
-          "at0005.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Durchgeführt?",
-            "description" : "Gibt es eine Historie, in der das identifizierte Verfahren durchgeführt oder ausgeführt wurde?",
-            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem der Choice-Datentyp DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
-          },
-          "at0037.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Zeitangaben",
-            "description" : "Zeitpunkt der Prozedur.",
-            "comment" : "Angabe des Zeitplans im Zusammenhang mit der Untersuchung. Kommentar: Das Datenelement „Zeitpunkt“ wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Durchführung eines Verfahrens verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter geklärt werden. Zum Beispiel: das tatsächliche Datum und/oder die tatsächliche Uhrzeit; die Start- und Endzeit des Verfahrens; das Zeitintervall, in dem das Verfahren durchgeführt wurde; die Dauer des Verfahrens; das Alter der Person zum Zeitpunkt des Verfahrens; oder die Zeitdauer seit dem Verfahren. Ein Teildatum ist unter Verwendung des Datentyps DV_DATE_TIME gültig, um nur ein Jahr zu erfassen."
           }
         },
         "it" : {
@@ -812,32 +708,6 @@
             "text" : "*(Synthesized) (en)",
             "code" : "ac0.1",
             "description" : ""
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0005.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
           }
         },
         "fr" : {
@@ -846,207 +716,6 @@
             "text" : "*(Synthesized) (en)",
             "code" : "ac0.1",
             "description" : ""
-          },
-          "at0000" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000",
-            "text" : "Questionnaire d'évaluation de la procédure",
-            "description" : "Série de questions et de réponses associées utilisées pour vérifier si des procédures ont été effectuées dans le passé.",
-            "comment" : "Les réponses peuvent être autodéclarées."
-          },
-          "at0002" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0002",
-            "text" : "Tout événement",
-            "description" : "Par défaut, point dans le temps non spécifié ou événement d'intervalle qui peut être explicitement défini dans un modèle ou au moment de l'exécution."
-          },
-          "at0004" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Nom de la procédure",
-            "description" : "Nom d'une procédure ou d'un groupe de procédures.",
-            "comment" : "Dans la mesure du possible, il est préférable de coder le \"nom de la procédure\" à l'aide d'une terminologie."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0021" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0021",
-            "text" : "Extension",
-            "description" : "Informations supplémentaires nécessaires pour étendre le modèle au contenu local ou pour l'aligner sur d'autres modèles de référence ou formalismes.",
-            "comment" : "Par exemple : exigences locales en matière d'information ou métadonnées supplémentaires pour s'aligner sur FHIR."
-          },
-          "at0022" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0022",
-            "text" : "Procédure spécifique",
-            "description" : "Détails d'une procédure spécifique ou d'un groupe de procédures en rapport avec l'objectif de la sélection."
-          },
-          "at0023" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0023",
-            "text" : "Oui",
-            "description" : ""
-          },
-          "at0024" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0024",
-            "text" : "Non",
-            "description" : ""
-          },
-          "at0025" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0025",
-            "text" : "Commentaire",
-            "description" : "Description supplémentaire de la question de procédure spécifique, qui n'est pas saisie dans d'autres champs."
-          },
-          "at0028" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0028",
-            "text" : "Y a-t-il eu des procédures antérieures ?",
-            "description" : "Existe-t-il des antécédents de procédures antérieures en rapport avec l'objectif du dépistage ?",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0031" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0031",
-            "text" : "Oui",
-            "description" : ""
-          },
-          "at0032" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0032",
-            "text" : "Non",
-            "description" : ""
-          },
-          "at0034" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0034",
-            "text" : "Objectif du dépistage",
-            "description" : "Le contexte ou la raison du dépistage.",
-            "comment" : "Cet élément de données est destiné à fournir un contexte de collecte pour les groupes de questions/réponses lors d'une interrogation ultérieure. Il n'est pas prévu que cet élément de données soit exposé à l'individu, mais seulement stocké dans les données. Par exemple : la sélection préalable à l'admission ou le nom du questionnaire proprement dit."
-          },
-          "at0036" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0036",
-            "text" : "Détails supplémentaires",
-            "description" : "Détails structurés ou questions sur la procédure spécifique.",
-            "comment" : "Par exemple : hôpital où le patient a été traité."
-          },
-          "at0037" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Timing",
-            "description" : "Moment de la procédure.",
-            "comment" : "Indication du moment de l'enquête Commentaire : L'élément de données \"Timing\" a été délibérément modélisé de manière souple afin de prendre en charge la myriade de façons dont il peut être utilisé dans les questionnaires pour saisir la date à laquelle une procédure a été effectuée. La sémantique spécifique et prévue peut être précisée dans un modèle. Par exemple : la date et/ou l'heure réelle ; l'heure de début et de fin de la procédure ; l'intervalle de temps pendant lequel la procédure a été effectuée ; la durée de la procédure ; l'âge de l'individu au moment de la procédure ; ou la durée écoulée depuis qu'elle a eu lieu. Une date partielle est valable, en utilisant le type de données DV_DATE_TIME, pour enregistrer seulement une année."
-          },
-          "at0038" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0038",
-            "text" : "Inconnu",
-            "description" : ""
-          },
-          "at0039" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0039",
-            "text" : "Inconnu",
-            "description" : ""
-          },
-          "at0040" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0040",
-            "text" : "Détails supplémentaires",
-            "description" : "Détails ou questions structurées sur le dépistage des procédures."
-          },
-          "at0041" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0041",
-            "text" : "Description",
-            "description" : "Description narrative des antécédents de toute procédure antérieure pertinente pour l'objectif du dépistage."
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0002.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0002",
-            "text" : "Tout événement",
-            "description" : "Par défaut, point dans le temps non spécifié ou événement d'intervalle qui peut être explicitement défini dans un modèle ou au moment de l'exécution."
-          },
-          "at0025.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0025",
-            "text" : "Commentaire",
-            "description" : "Description supplémentaire de la question de procédure spécifique, qui n'est pas saisie dans d'autres champs."
-          },
-          "at0036.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0036",
-            "text" : "Détails supplémentaires",
-            "description" : "Détails structurés ou questions sur la procédure spécifique.",
-            "comment" : "Par exemple : hôpital où le patient a été traité."
-          },
-          "at0004.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Nom de la procédure",
-            "description" : "Nom d'une procédure ou d'un groupe de procédures.",
-            "comment" : "Dans la mesure du possible, il est préférable de coder le \"nom de la procédure\" à l'aide d'une terminologie."
-          },
-          "at0005.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0037.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Timing",
-            "description" : "Moment de la procédure.",
-            "comment" : "Indication du moment de l'enquête Commentaire : L'élément de données \"Timing\" a été délibérément modélisé de manière souple afin de prendre en charge la myriade de façons dont il peut être utilisé dans les questionnaires pour saisir la date à laquelle une procédure a été effectuée. La sémantique spécifique et prévue peut être précisée dans un modèle. Par exemple : la date et/ou l'heure réelle ; l'heure de début et de fin de la procédure ; l'intervalle de temps pendant lequel la procédure a été effectuée ; la durée de la procédure ; l'âge de l'individu au moment de la procédure ; ou la durée écoulée depuis qu'elle a eu lieu. Une date partielle est valable, en utilisant le type de données DV_DATE_TIME, pour enregistrer seulement une année."
-          },
-          "at0028.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0028",
-            "text" : "Y a-t-il eu des procédures antérieures ?",
-            "description" : "Existe-t-il des antécédents de procédures antérieures en rapport avec l'objectif du dépistage ?",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0041.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0041",
-            "text" : "Description",
-            "description" : "Description narrative des antécédents de toute procédure antérieure pertinente pour l'objectif du dépistage."
-          },
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000",
-            "text" : "Questionnaire d'évaluation de la procédure",
-            "description" : "Série de questions et de réponses associées utilisées pour vérifier si des procédures ont été effectuées dans le passé.",
-            "comment" : "Les réponses peuvent être autodéclarées."
-          },
-          "at0034.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0034",
-            "text" : "Objectif du dépistage",
-            "description" : "Le contexte ou la raison du dépistage.",
-            "comment" : "Cet élément de données est destiné à fournir un contexte de collecte pour les groupes de questions/réponses lors d'une interrogation ultérieure. Il n'est pas prévu que cet élément de données soit exposé à l'individu, mais seulement stocké dans les données. Par exemple : la sélection préalable à l'admission ou le nom du questionnaire proprement dit."
           }
         }
       },
@@ -2547,7 +2216,6 @@
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "OBSERVATION",
-      "occurrences" : "1..1",
       "nodeId" : "at0000.1",
       "attributes" : [ {
         "@type" : "C_ATTRIBUTE",
@@ -2577,7 +2245,6 @@
                     "children" : [ {
                       "@type" : "C_COMPLEX_OBJECT",
                       "rmTypeName" : "ELEMENT",
-                      "occurrences" : "0..1",
                       "nodeId" : "at0034.1",
                       "attributes" : [ {
                         "@type" : "C_ATTRIBUTE",
@@ -2775,6 +2442,13 @@
                           } ],
                           "attributeTuples" : [ ]
                         }, {
+                          "@type" : "C_COMPLEX_OBJECT",
+                          "rmTypeName" : "ELEMENT",
+                          "occurrences" : "0..0",
+                          "nodeId" : "at0025.1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ]
+                        }, {
                           "@type" : "C_ARCHETYPE_ROOT",
                           "rmTypeName" : "CLUSTER",
                           "occurrences" : "0..1",
@@ -2783,13 +2457,6 @@
                           "attributeTuples" : [ ],
                           "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-anatomical_location-002.v1",
                           "referenceType" : "archetypeOverlay"
-                        }, {
-                          "@type" : "C_COMPLEX_OBJECT",
-                          "rmTypeName" : "ELEMENT",
-                          "occurrences" : "0..0",
-                          "nodeId" : "at0025.1",
-                          "attributes" : [ ],
-                          "attributeTuples" : [ ]
                         } ]
                       } ],
                       "attributeTuples" : [ ]
@@ -2823,32 +2490,6 @@
             "text" : "(Synthesized)",
             "code" : "ac0.1",
             "description" : ""
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Carried out?",
-            "description" : "Is there a history of the identified procedure being done or carried out?",
-            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "Unsure",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "Unsure",
-            "description" : ""
-          },
-          "at0005.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Carried out?",
-            "description" : "Is there a history of the identified procedure being done or carried out?",
-            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
           }
         },
         "nb" : {
@@ -2885,37 +2526,6 @@
             "text" : "Tidsangivelse for fjerning av eggstokker",
             "description" : "Tidsangivelse for prosedyren.",
             "comment" : "Dataelementet \"Tidsangivelse\" er med hensikt løst modellert for å støtte ulike måter å angi tidsangivelser for prosedyrer i et spørreskjema. Den konkrete semantikken defineres i templatet. For eksempel: Prosedyrens faktiske dato og/eller klokkeslett, start- og slutttid for prosedyren, et tidsintervall for når prosedyren ble gjort, varigheten av prosedyren, individets alder på tidspunktet for prosedyren, eller hvor lenge det siden den ble gjort. Kan være en deldato, for eksempel bare år, ved å bruke datatypen DV_DATE_TIME."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Utført?",
-            "description" : "Har den identifiserte prosedyren vært utført?",
-            "comment" : "Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN."
-          },
-          "at0038" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0038",
-            "text" : "Ukjent",
-            "description" : ""
-          },
-          "at0039" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0039",
-            "text" : "Ukjent",
-            "description" : ""
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "Usikker",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "Usikker",
-            "description" : ""
           }
         },
         "de" : {
@@ -2931,60 +2541,6 @@
             "text" : "*(Synthesized) (en)",
             "code" : "ac0.1",
             "description" : ""
-          },
-          "at0004" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Name der Prozedur",
-            "description" : "Name einer Prozedur oder einer Gruppe von Prozeduren.",
-            "comment" : "Die Codierung des „Name der Prozedur“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Durchgeführt?",
-            "description" : "Gibt es eine Historie, in der das identifizierte Verfahren durchgeführt oder ausgeführt wurde?",
-            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem der Choice-Datentyp DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
-          },
-          "at0037" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Zeitangaben",
-            "description" : "Zeitpunkt der Prozedur.",
-            "comment" : "Angabe des Zeitplans im Zusammenhang mit der Untersuchung. Kommentar: Das Datenelement „Zeitpunkt“ wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Durchführung eines Verfahrens verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter geklärt werden. Zum Beispiel: das tatsächliche Datum und/oder die tatsächliche Uhrzeit; die Start- und Endzeit des Verfahrens; das Zeitintervall, in dem das Verfahren durchgeführt wurde; die Dauer des Verfahrens; das Alter der Person zum Zeitpunkt des Verfahrens; oder die Zeitdauer seit dem Verfahren. Ein Teildatum ist unter Verwendung des Datentyps DV_DATE_TIME gültig, um nur ein Jahr zu erfassen."
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "Unsicher",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "Unsicher",
-            "description" : ""
-          },
-          "at0004.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Name der Prozedur",
-            "description" : "Name einer Prozedur oder einer Gruppe von Prozeduren.",
-            "comment" : "Die Codierung des „Name der Prozedur“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
-          },
-          "at0005.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Durchgeführt?",
-            "description" : "Gibt es eine Historie, in der das identifizierte Verfahren durchgeführt oder ausgeführt wurde?",
-            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem der Choice-Datentyp DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
-          },
-          "at0037.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Zeitangaben",
-            "description" : "Zeitpunkt der Prozedur.",
-            "comment" : "Angabe des Zeitplans im Zusammenhang mit der Untersuchung. Kommentar: Das Datenelement „Zeitpunkt“ wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Durchführung eines Verfahrens verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter geklärt werden. Zum Beispiel: das tatsächliche Datum und/oder die tatsächliche Uhrzeit; die Start- und Endzeit des Verfahrens; das Zeitintervall, in dem das Verfahren durchgeführt wurde; die Dauer des Verfahrens; das Alter der Person zum Zeitpunkt des Verfahrens; oder die Zeitdauer seit dem Verfahren. Ein Teildatum ist unter Verwendung des Datentyps DV_DATE_TIME gültig, um nur ein Jahr zu erfassen."
           }
         },
         "it" : {
@@ -3000,32 +2556,6 @@
             "text" : "*(Synthesized) (en)",
             "code" : "ac0.1",
             "description" : ""
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0005.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
           }
         },
         "fr" : {
@@ -3041,200 +2571,6 @@
             "text" : "*(Synthesized) (en)",
             "code" : "ac0.1",
             "description" : ""
-          },
-          "at0000" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000",
-            "text" : "Questionnaire d'évaluation de la procédure",
-            "description" : "Série de questions et de réponses associées utilisées pour vérifier si des procédures ont été effectuées dans le passé.",
-            "comment" : "Les réponses peuvent être autodéclarées."
-          },
-          "at0002" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0002",
-            "text" : "Tout événement",
-            "description" : "Par défaut, point dans le temps non spécifié ou événement d'intervalle qui peut être explicitement défini dans un modèle ou au moment de l'exécution."
-          },
-          "at0004" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Nom de la procédure",
-            "description" : "Nom d'une procédure ou d'un groupe de procédures.",
-            "comment" : "Dans la mesure du possible, il est préférable de coder le \"nom de la procédure\" à l'aide d'une terminologie."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0021" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0021",
-            "text" : "Extension",
-            "description" : "Informations supplémentaires nécessaires pour étendre le modèle au contenu local ou pour l'aligner sur d'autres modèles de référence ou formalismes.",
-            "comment" : "Par exemple : exigences locales en matière d'information ou métadonnées supplémentaires pour s'aligner sur FHIR."
-          },
-          "at0022" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0022",
-            "text" : "Procédure spécifique",
-            "description" : "Détails d'une procédure spécifique ou d'un groupe de procédures en rapport avec l'objectif de la sélection."
-          },
-          "at0023" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0023",
-            "text" : "Oui",
-            "description" : ""
-          },
-          "at0024" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0024",
-            "text" : "Non",
-            "description" : ""
-          },
-          "at0025" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0025",
-            "text" : "Commentaire",
-            "description" : "Description supplémentaire de la question de procédure spécifique, qui n'est pas saisie dans d'autres champs."
-          },
-          "at0028" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0028",
-            "text" : "Y a-t-il eu des procédures antérieures ?",
-            "description" : "Existe-t-il des antécédents de procédures antérieures en rapport avec l'objectif du dépistage ?",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0031" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0031",
-            "text" : "Oui",
-            "description" : ""
-          },
-          "at0032" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0032",
-            "text" : "Non",
-            "description" : ""
-          },
-          "at0034" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0034",
-            "text" : "Objectif du dépistage",
-            "description" : "Le contexte ou la raison du dépistage.",
-            "comment" : "Cet élément de données est destiné à fournir un contexte de collecte pour les groupes de questions/réponses lors d'une interrogation ultérieure. Il n'est pas prévu que cet élément de données soit exposé à l'individu, mais seulement stocké dans les données. Par exemple : la sélection préalable à l'admission ou le nom du questionnaire proprement dit."
-          },
-          "at0036" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0036",
-            "text" : "Détails supplémentaires",
-            "description" : "Détails structurés ou questions sur la procédure spécifique.",
-            "comment" : "Par exemple : hôpital où le patient a été traité."
-          },
-          "at0037" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Timing",
-            "description" : "Moment de la procédure.",
-            "comment" : "Indication du moment de l'enquête Commentaire : L'élément de données \"Timing\" a été délibérément modélisé de manière souple afin de prendre en charge la myriade de façons dont il peut être utilisé dans les questionnaires pour saisir la date à laquelle une procédure a été effectuée. La sémantique spécifique et prévue peut être précisée dans un modèle. Par exemple : la date et/ou l'heure réelle ; l'heure de début et de fin de la procédure ; l'intervalle de temps pendant lequel la procédure a été effectuée ; la durée de la procédure ; l'âge de l'individu au moment de la procédure ; ou la durée écoulée depuis qu'elle a eu lieu. Une date partielle est valable, en utilisant le type de données DV_DATE_TIME, pour enregistrer seulement une année."
-          },
-          "at0038" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0038",
-            "text" : "Inconnu",
-            "description" : ""
-          },
-          "at0039" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0039",
-            "text" : "Inconnu",
-            "description" : ""
-          },
-          "at0040" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0040",
-            "text" : "Détails supplémentaires",
-            "description" : "Détails ou questions structurées sur le dépistage des procédures."
-          },
-          "at0041" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0041",
-            "text" : "Description",
-            "description" : "Description narrative des antécédents de toute procédure antérieure pertinente pour l'objectif du dépistage."
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0002.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0002",
-            "text" : "Tout événement",
-            "description" : "Par défaut, point dans le temps non spécifié ou événement d'intervalle qui peut être explicitement défini dans un modèle ou au moment de l'exécution."
-          },
-          "at0025.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0025",
-            "text" : "Commentaire",
-            "description" : "Description supplémentaire de la question de procédure spécifique, qui n'est pas saisie dans d'autres champs."
-          },
-          "at0036.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0036",
-            "text" : "Détails supplémentaires",
-            "description" : "Détails structurés ou questions sur la procédure spécifique.",
-            "comment" : "Par exemple : hôpital où le patient a été traité."
-          },
-          "at0004.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Nom de la procédure",
-            "description" : "Nom d'une procédure ou d'un groupe de procédures.",
-            "comment" : "Dans la mesure du possible, il est préférable de coder le \"nom de la procédure\" à l'aide d'une terminologie."
-          },
-          "at0005.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0037.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Timing",
-            "description" : "Moment de la procédure.",
-            "comment" : "Indication du moment de l'enquête Commentaire : L'élément de données \"Timing\" a été délibérément modélisé de manière souple afin de prendre en charge la myriade de façons dont il peut être utilisé dans les questionnaires pour saisir la date à laquelle une procédure a été effectuée. La sémantique spécifique et prévue peut être précisée dans un modèle. Par exemple : la date et/ou l'heure réelle ; l'heure de début et de fin de la procédure ; l'intervalle de temps pendant lequel la procédure a été effectuée ; la durée de la procédure ; l'âge de l'individu au moment de la procédure ; ou la durée écoulée depuis qu'elle a eu lieu. Une date partielle est valable, en utilisant le type de données DV_DATE_TIME, pour enregistrer seulement une année."
-          },
-          "at0028.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0028",
-            "text" : "Y a-t-il eu des procédures antérieures ?",
-            "description" : "Existe-t-il des antécédents de procédures antérieures en rapport avec l'objectif du dépistage ?",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0041.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0041",
-            "text" : "Description",
-            "description" : "Description narrative des antécédents de toute procédure antérieure pertinente pour l'objectif du dépistage."
-          },
-          "at0034.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0034",
-            "text" : "Objectif du dépistage",
-            "description" : "Le contexte ou la raison du dépistage.",
-            "comment" : "Cet élément de données est destiné à fournir un contexte de collecte pour les groupes de questions/réponses lors d'une interrogation ultérieure. Il n'est pas prévu que cet élément de données soit exposé à l'individu, mais seulement stocké dans les données. Par exemple : la sélection préalable à l'admission ou le nom du questionnaire proprement dit."
           }
         }
       },
@@ -3415,7 +2751,6 @@
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "OBSERVATION",
-      "occurrences" : "1..1",
       "nodeId" : "at0000.1",
       "attributes" : [ {
         "@type" : "C_ATTRIBUTE",
@@ -3445,7 +2780,6 @@
                     "children" : [ {
                       "@type" : "C_COMPLEX_OBJECT",
                       "rmTypeName" : "ELEMENT",
-                      "occurrences" : "0..1",
                       "nodeId" : "at0034.1",
                       "attributes" : [ {
                         "@type" : "C_ATTRIBUTE",
@@ -3821,39 +3155,6 @@
             "code" : "at0022.1",
             "text" : "Specific procedure (2)",
             "description" : "Details about a specific procedure or grouping of procedures relevant for the screening purpose."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Carried out?",
-            "description" : "Is there a history of the identified procedure being done or carried out?",
-            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "Unsure",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "Unsure",
-            "description" : ""
-          },
-          "at0005.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Carried out?",
-            "description" : "Is there a history of the identified procedure being done or carried out?",
-            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
-          },
-          "at0005.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Carried out?",
-            "description" : "Is there a history of the identified procedure being done or carried out?",
-            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
           }
         },
         "nb" : {
@@ -3903,37 +3204,6 @@
             "text" : "Har du eller bruker du hormonsubstitusjon?",
             "description" : "Er den spesifikke prosedyren noen gang blitt gjennomført?",
             "comment" : "Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Utført?",
-            "description" : "Har den identifiserte prosedyren vært utført?",
-            "comment" : "Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN."
-          },
-          "at0038" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0038",
-            "text" : "Ukjent",
-            "description" : ""
-          },
-          "at0039" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0039",
-            "text" : "Ukjent",
-            "description" : ""
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "Usikker",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "Usikker",
-            "description" : ""
           }
         },
         "de" : {
@@ -3955,81 +3225,6 @@
             "code" : "at0022.1",
             "text" : "Spezifische Prozedur (2)",
             "description" : "Details zu einer bestimmten Prozedur oder zu einer bestimmten Gruppe von Prozeduren, die für das Screening relevant sind."
-          },
-          "at0004" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Name der Prozedur",
-            "description" : "Name einer Prozedur oder einer Gruppe von Prozeduren.",
-            "comment" : "Die Codierung des „Name der Prozedur“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Durchgeführt?",
-            "description" : "Gibt es eine Historie, in der das identifizierte Verfahren durchgeführt oder ausgeführt wurde?",
-            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem der Choice-Datentyp DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
-          },
-          "at0037" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Zeitangaben",
-            "description" : "Zeitpunkt der Prozedur.",
-            "comment" : "Angabe des Zeitplans im Zusammenhang mit der Untersuchung. Kommentar: Das Datenelement „Zeitpunkt“ wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Durchführung eines Verfahrens verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter geklärt werden. Zum Beispiel: das tatsächliche Datum und/oder die tatsächliche Uhrzeit; die Start- und Endzeit des Verfahrens; das Zeitintervall, in dem das Verfahren durchgeführt wurde; die Dauer des Verfahrens; das Alter der Person zum Zeitpunkt des Verfahrens; oder die Zeitdauer seit dem Verfahren. Ein Teildatum ist unter Verwendung des Datentyps DV_DATE_TIME gültig, um nur ein Jahr zu erfassen."
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "Unsicher",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "Unsicher",
-            "description" : ""
-          },
-          "at0004.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Name der Prozedur",
-            "description" : "Name einer Prozedur oder einer Gruppe von Prozeduren.",
-            "comment" : "Die Codierung des „Name der Prozedur“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
-          },
-          "at0037.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Zeitangaben",
-            "description" : "Zeitpunkt der Prozedur.",
-            "comment" : "Angabe des Zeitplans im Zusammenhang mit der Untersuchung. Kommentar: Das Datenelement „Zeitpunkt“ wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Durchführung eines Verfahrens verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter geklärt werden. Zum Beispiel: das tatsächliche Datum und/oder die tatsächliche Uhrzeit; die Start- und Endzeit des Verfahrens; das Zeitintervall, in dem das Verfahren durchgeführt wurde; die Dauer des Verfahrens; das Alter der Person zum Zeitpunkt des Verfahrens; oder die Zeitdauer seit dem Verfahren. Ein Teildatum ist unter Verwendung des Datentyps DV_DATE_TIME gültig, um nur ein Jahr zu erfassen."
-          },
-          "at0005.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Durchgeführt?",
-            "description" : "Gibt es eine Historie, in der das identifizierte Verfahren durchgeführt oder ausgeführt wurde?",
-            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem der Choice-Datentyp DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
-          },
-          "at0037.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Zeitangaben",
-            "description" : "Zeitpunkt der Prozedur.",
-            "comment" : "Angabe des Zeitplans im Zusammenhang mit der Untersuchung. Kommentar: Das Datenelement „Zeitpunkt“ wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Durchführung eines Verfahrens verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter geklärt werden. Zum Beispiel: das tatsächliche Datum und/oder die tatsächliche Uhrzeit; die Start- und Endzeit des Verfahrens; das Zeitintervall, in dem das Verfahren durchgeführt wurde; die Dauer des Verfahrens; das Alter der Person zum Zeitpunkt des Verfahrens; oder die Zeitdauer seit dem Verfahren. Ein Teildatum ist unter Verwendung des Datentyps DV_DATE_TIME gültig, um nur ein Jahr zu erfassen."
-          },
-          "at0004.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Name der Prozedur",
-            "description" : "Name einer Prozedur oder einer Gruppe von Prozeduren.",
-            "comment" : "Die Codierung des „Name der Prozedur“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
-          },
-          "at0005.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Durchgeführt?",
-            "description" : "Gibt es eine Historie, in der das identifizierte Verfahren durchgeführt oder ausgeführt wurde?",
-            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem der Choice-Datentyp DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
           }
         },
         "it" : {
@@ -4051,39 +3246,6 @@
             "code" : "at0022.1",
             "text" : "Procedura specifica (2)",
             "description" : "*Details about a specific procedure or grouping of procedures relevant for the screening purpose. (en)"
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0005.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
-          },
-          "at0005.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
           }
         },
         "fr" : {
@@ -4104,226 +3266,6 @@
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0022.1",
             "text" : "Procédure spécifique (2)",
-            "description" : "Détails d'une procédure spécifique ou d'un groupe de procédures en rapport avec l'objectif de la sélection."
-          },
-          "at0000" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000",
-            "text" : "Questionnaire d'évaluation de la procédure",
-            "description" : "Série de questions et de réponses associées utilisées pour vérifier si des procédures ont été effectuées dans le passé.",
-            "comment" : "Les réponses peuvent être autodéclarées."
-          },
-          "at0002" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0002",
-            "text" : "Tout événement",
-            "description" : "Par défaut, point dans le temps non spécifié ou événement d'intervalle qui peut être explicitement défini dans un modèle ou au moment de l'exécution."
-          },
-          "at0004" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Nom de la procédure",
-            "description" : "Nom d'une procédure ou d'un groupe de procédures.",
-            "comment" : "Dans la mesure du possible, il est préférable de coder le \"nom de la procédure\" à l'aide d'une terminologie."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0021" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0021",
-            "text" : "Extension",
-            "description" : "Informations supplémentaires nécessaires pour étendre le modèle au contenu local ou pour l'aligner sur d'autres modèles de référence ou formalismes.",
-            "comment" : "Par exemple : exigences locales en matière d'information ou métadonnées supplémentaires pour s'aligner sur FHIR."
-          },
-          "at0022" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0022",
-            "text" : "Procédure spécifique",
-            "description" : "Détails d'une procédure spécifique ou d'un groupe de procédures en rapport avec l'objectif de la sélection."
-          },
-          "at0023" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0023",
-            "text" : "Oui",
-            "description" : ""
-          },
-          "at0024" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0024",
-            "text" : "Non",
-            "description" : ""
-          },
-          "at0025" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0025",
-            "text" : "Commentaire",
-            "description" : "Description supplémentaire de la question de procédure spécifique, qui n'est pas saisie dans d'autres champs."
-          },
-          "at0028" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0028",
-            "text" : "Y a-t-il eu des procédures antérieures ?",
-            "description" : "Existe-t-il des antécédents de procédures antérieures en rapport avec l'objectif du dépistage ?",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0031" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0031",
-            "text" : "Oui",
-            "description" : ""
-          },
-          "at0032" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0032",
-            "text" : "Non",
-            "description" : ""
-          },
-          "at0034" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0034",
-            "text" : "Objectif du dépistage",
-            "description" : "Le contexte ou la raison du dépistage.",
-            "comment" : "Cet élément de données est destiné à fournir un contexte de collecte pour les groupes de questions/réponses lors d'une interrogation ultérieure. Il n'est pas prévu que cet élément de données soit exposé à l'individu, mais seulement stocké dans les données. Par exemple : la sélection préalable à l'admission ou le nom du questionnaire proprement dit."
-          },
-          "at0036" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0036",
-            "text" : "Détails supplémentaires",
-            "description" : "Détails structurés ou questions sur la procédure spécifique.",
-            "comment" : "Par exemple : hôpital où le patient a été traité."
-          },
-          "at0037" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Timing",
-            "description" : "Moment de la procédure.",
-            "comment" : "Indication du moment de l'enquête Commentaire : L'élément de données \"Timing\" a été délibérément modélisé de manière souple afin de prendre en charge la myriade de façons dont il peut être utilisé dans les questionnaires pour saisir la date à laquelle une procédure a été effectuée. La sémantique spécifique et prévue peut être précisée dans un modèle. Par exemple : la date et/ou l'heure réelle ; l'heure de début et de fin de la procédure ; l'intervalle de temps pendant lequel la procédure a été effectuée ; la durée de la procédure ; l'âge de l'individu au moment de la procédure ; ou la durée écoulée depuis qu'elle a eu lieu. Une date partielle est valable, en utilisant le type de données DV_DATE_TIME, pour enregistrer seulement une année."
-          },
-          "at0038" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0038",
-            "text" : "Inconnu",
-            "description" : ""
-          },
-          "at0039" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0039",
-            "text" : "Inconnu",
-            "description" : ""
-          },
-          "at0040" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0040",
-            "text" : "Détails supplémentaires",
-            "description" : "Détails ou questions structurées sur le dépistage des procédures."
-          },
-          "at0041" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0041",
-            "text" : "Description",
-            "description" : "Description narrative des antécédents de toute procédure antérieure pertinente pour l'objectif du dépistage."
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0002.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0002",
-            "text" : "Tout événement",
-            "description" : "Par défaut, point dans le temps non spécifié ou événement d'intervalle qui peut être explicitement défini dans un modèle ou au moment de l'exécution."
-          },
-          "at0025.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0025",
-            "text" : "Commentaire",
-            "description" : "Description supplémentaire de la question de procédure spécifique, qui n'est pas saisie dans d'autres champs."
-          },
-          "at0004.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Nom de la procédure",
-            "description" : "Nom d'une procédure ou d'un groupe de procédures.",
-            "comment" : "Dans la mesure du possible, il est préférable de coder le \"nom de la procédure\" à l'aide d'une terminologie."
-          },
-          "at0037.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Timing",
-            "description" : "Moment de la procédure.",
-            "comment" : "Indication du moment de l'enquête Commentaire : L'élément de données \"Timing\" a été délibérément modélisé de manière souple afin de prendre en charge la myriade de façons dont il peut être utilisé dans les questionnaires pour saisir la date à laquelle une procédure a été effectuée. La sémantique spécifique et prévue peut être précisée dans un modèle. Par exemple : la date et/ou l'heure réelle ; l'heure de début et de fin de la procédure ; l'intervalle de temps pendant lequel la procédure a été effectuée ; la durée de la procédure ; l'âge de l'individu au moment de la procédure ; ou la durée écoulée depuis qu'elle a eu lieu. Une date partielle est valable, en utilisant le type de données DV_DATE_TIME, pour enregistrer seulement une année."
-          },
-          "at0005.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0037.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Timing",
-            "description" : "Moment de la procédure.",
-            "comment" : "Indication du moment de l'enquête Commentaire : L'élément de données \"Timing\" a été délibérément modélisé de manière souple afin de prendre en charge la myriade de façons dont il peut être utilisé dans les questionnaires pour saisir la date à laquelle une procédure a été effectuée. La sémantique spécifique et prévue peut être précisée dans un modèle. Par exemple : la date et/ou l'heure réelle ; l'heure de début et de fin de la procédure ; l'intervalle de temps pendant lequel la procédure a été effectuée ; la durée de la procédure ; l'âge de l'individu au moment de la procédure ; ou la durée écoulée depuis qu'elle a eu lieu. Une date partielle est valable, en utilisant le type de données DV_DATE_TIME, pour enregistrer seulement une année."
-          },
-          "at0004.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Nom de la procédure",
-            "description" : "Nom d'une procédure ou d'un groupe de procédures.",
-            "comment" : "Dans la mesure du possible, il est préférable de coder le \"nom de la procédure\" à l'aide d'une terminologie."
-          },
-          "at0025.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0025",
-            "text" : "Commentaire",
-            "description" : "Description supplémentaire de la question de procédure spécifique, qui n'est pas saisie dans d'autres champs."
-          },
-          "at0005.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0028.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0028",
-            "text" : "Y a-t-il eu des procédures antérieures ?",
-            "description" : "Existe-t-il des antécédents de procédures antérieures en rapport avec l'objectif du dépistage ?",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0041.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0041",
-            "text" : "Description",
-            "description" : "Description narrative des antécédents de toute procédure antérieure pertinente pour l'objectif du dépistage."
-          },
-          "at0034.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0034",
-            "text" : "Objectif du dépistage",
-            "description" : "Le contexte ou la raison du dépistage.",
-            "comment" : "Cet élément de données est destiné à fournir un contexte de collecte pour les groupes de questions/réponses lors d'une interrogation ultérieure. Il n'est pas prévu que cet élément de données soit exposé à l'individu, mais seulement stocké dans les données. Par exemple : la sélection préalable à l'admission ou le nom du questionnaire proprement dit."
-          },
-          "at0022.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0022",
-            "text" : "Procédure spécifique",
             "description" : "Détails d'une procédure spécifique ou d'un groupe de procédures en rapport avec l'objectif de la sélection."
           }
         }
@@ -4530,7 +3472,6 @@
     "definition" : {
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "OBSERVATION",
-      "occurrences" : "1..1",
       "nodeId" : "at0000.1",
       "attributes" : [ {
         "@type" : "C_ATTRIBUTE",
@@ -4560,7 +3501,6 @@
                     "children" : [ {
                       "@type" : "C_COMPLEX_OBJECT",
                       "rmTypeName" : "ELEMENT",
-                      "occurrences" : "0..1",
                       "nodeId" : "at0034.1",
                       "attributes" : [ {
                         "@type" : "C_ATTRIBUTE",
@@ -4816,32 +3756,6 @@
             "code" : "at0022.1",
             "text" : "Specific procedure (2)",
             "description" : "Details about a specific procedure or grouping of procedures relevant for the screening purpose."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Carried out?",
-            "description" : "Is there a history of the identified procedure being done or carried out?",
-            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "Unsure",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "Unsure",
-            "description" : ""
-          },
-          "at0005.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Carried out?",
-            "description" : "Is there a history of the identified procedure being done or carried out?",
-            "comment" : "In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case."
           }
         },
         "nb" : {
@@ -4877,37 +3791,6 @@
             "text" : "Har du eller bruker du hormonsubstitusjon (HRT)?",
             "description" : "Er den spesifikke prosedyren noen gang blitt gjennomført?",
             "comment" : "Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Utført?",
-            "description" : "Har den identifiserte prosedyren vært utført?",
-            "comment" : "Navnet på dataelementet kan omformuleres til det spesifikke spørsmålet i et templat eller brukergrensesnitt. Det foreslåtte verdisettet kan tilpasses/endres i det enkelte bruksområde ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN."
-          },
-          "at0038" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0038",
-            "text" : "Ukjent",
-            "description" : ""
-          },
-          "at0039" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0039",
-            "text" : "Ukjent",
-            "description" : ""
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "Usikker",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "Usikker",
-            "description" : ""
           }
         },
         "de" : {
@@ -4929,60 +3812,6 @@
             "code" : "at0022.1",
             "text" : "Spezifische Prozedur (2)",
             "description" : "Details zu einer bestimmten Prozedur oder zu einer bestimmten Gruppe von Prozeduren, die für das Screening relevant sind."
-          },
-          "at0004" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Name der Prozedur",
-            "description" : "Name einer Prozedur oder einer Gruppe von Prozeduren.",
-            "comment" : "Die Codierung des „Name der Prozedur“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Durchgeführt?",
-            "description" : "Gibt es eine Historie, in der das identifizierte Verfahren durchgeführt oder ausgeführt wurde?",
-            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem der Choice-Datentyp DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
-          },
-          "at0037" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Zeitangaben",
-            "description" : "Zeitpunkt der Prozedur.",
-            "comment" : "Angabe des Zeitplans im Zusammenhang mit der Untersuchung. Kommentar: Das Datenelement „Zeitpunkt“ wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Durchführung eines Verfahrens verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter geklärt werden. Zum Beispiel: das tatsächliche Datum und/oder die tatsächliche Uhrzeit; die Start- und Endzeit des Verfahrens; das Zeitintervall, in dem das Verfahren durchgeführt wurde; die Dauer des Verfahrens; das Alter der Person zum Zeitpunkt des Verfahrens; oder die Zeitdauer seit dem Verfahren. Ein Teildatum ist unter Verwendung des Datentyps DV_DATE_TIME gültig, um nur ein Jahr zu erfassen."
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "Unsicher",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "Unsicher",
-            "description" : ""
-          },
-          "at0037.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Zeitangaben",
-            "description" : "Zeitpunkt der Prozedur.",
-            "comment" : "Angabe des Zeitplans im Zusammenhang mit der Untersuchung. Kommentar: Das Datenelement „Zeitpunkt“ wurde bewusst locker modelliert, um die unzähligen Möglichkeiten zu unterstützen, mit denen es in Fragebögen zur Erfassung des Zeitpunkts der Durchführung eines Verfahrens verwendet werden kann. Die spezifische und beabsichtigte Semantik kann in einem Template weiter geklärt werden. Zum Beispiel: das tatsächliche Datum und/oder die tatsächliche Uhrzeit; die Start- und Endzeit des Verfahrens; das Zeitintervall, in dem das Verfahren durchgeführt wurde; die Dauer des Verfahrens; das Alter der Person zum Zeitpunkt des Verfahrens; oder die Zeitdauer seit dem Verfahren. Ein Teildatum ist unter Verwendung des Datentyps DV_DATE_TIME gültig, um nur ein Jahr zu erfassen."
-          },
-          "at0004.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Name der Prozedur",
-            "description" : "Name einer Prozedur oder einer Gruppe von Prozeduren.",
-            "comment" : "Die Codierung des „Name der Prozedur“ mit einer Terminologie wird nach Möglichkeit bevorzugt."
-          },
-          "at0005.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "Durchgeführt?",
-            "description" : "Gibt es eine Historie, in der das identifizierte Verfahren durchgeführt oder ausgeführt wurde?",
-            "comment" : "In einem Template würde das Datenelement normalerweise in die spezifisch gestellte Frage umbenannt. Der vorgeschlagene Wertesatz kann für die lokale Verwendung angepasst werden, indem der Choice-Datentyp DV_TEXT oder DV_BOOLEAN verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen."
           }
         },
         "it" : {
@@ -5004,32 +3833,6 @@
             "code" : "at0022.1",
             "text" : "Procedura specifica (2)",
             "description" : "*Details about a specific procedure or grouping of procedures relevant for the screening purpose. (en)"
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0005.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "*In a template, the data element would usually be renamed to the specific question asked. The proposed value set can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case. (en)"
           }
         },
         "fr" : {
@@ -5051,193 +3854,6 @@
             "code" : "at0022.1",
             "text" : "Procédure spécifique (2)",
             "description" : "Détails d'une procédure spécifique ou d'un groupe de procédures en rapport avec l'objectif de la sélection."
-          },
-          "at0000" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000",
-            "text" : "Questionnaire d'évaluation de la procédure",
-            "description" : "Série de questions et de réponses associées utilisées pour vérifier si des procédures ont été effectuées dans le passé.",
-            "comment" : "Les réponses peuvent être autodéclarées."
-          },
-          "at0002" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0002",
-            "text" : "Tout événement",
-            "description" : "Par défaut, point dans le temps non spécifié ou événement d'intervalle qui peut être explicitement défini dans un modèle ou au moment de l'exécution."
-          },
-          "at0004" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Nom de la procédure",
-            "description" : "Nom d'une procédure ou d'un groupe de procédures.",
-            "comment" : "Dans la mesure du possible, il est préférable de coder le \"nom de la procédure\" à l'aide d'une terminologie."
-          },
-          "at0005" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0021" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0021",
-            "text" : "Extension",
-            "description" : "Informations supplémentaires nécessaires pour étendre le modèle au contenu local ou pour l'aligner sur d'autres modèles de référence ou formalismes.",
-            "comment" : "Par exemple : exigences locales en matière d'information ou métadonnées supplémentaires pour s'aligner sur FHIR."
-          },
-          "at0022" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0022",
-            "text" : "Procédure spécifique",
-            "description" : "Détails d'une procédure spécifique ou d'un groupe de procédures en rapport avec l'objectif de la sélection."
-          },
-          "at0023" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0023",
-            "text" : "Oui",
-            "description" : ""
-          },
-          "at0024" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0024",
-            "text" : "Non",
-            "description" : ""
-          },
-          "at0025" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0025",
-            "text" : "Commentaire",
-            "description" : "Description supplémentaire de la question de procédure spécifique, qui n'est pas saisie dans d'autres champs."
-          },
-          "at0028" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0028",
-            "text" : "Y a-t-il eu des procédures antérieures ?",
-            "description" : "Existe-t-il des antécédents de procédures antérieures en rapport avec l'objectif du dépistage ?",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0031" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0031",
-            "text" : "Oui",
-            "description" : ""
-          },
-          "at0032" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0032",
-            "text" : "Non",
-            "description" : ""
-          },
-          "at0034" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0034",
-            "text" : "Objectif du dépistage",
-            "description" : "Le contexte ou la raison du dépistage.",
-            "comment" : "Cet élément de données est destiné à fournir un contexte de collecte pour les groupes de questions/réponses lors d'une interrogation ultérieure. Il n'est pas prévu que cet élément de données soit exposé à l'individu, mais seulement stocké dans les données. Par exemple : la sélection préalable à l'admission ou le nom du questionnaire proprement dit."
-          },
-          "at0036" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0036",
-            "text" : "Détails supplémentaires",
-            "description" : "Détails structurés ou questions sur la procédure spécifique.",
-            "comment" : "Par exemple : hôpital où le patient a été traité."
-          },
-          "at0037" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Timing",
-            "description" : "Moment de la procédure.",
-            "comment" : "Indication du moment de l'enquête Commentaire : L'élément de données \"Timing\" a été délibérément modélisé de manière souple afin de prendre en charge la myriade de façons dont il peut être utilisé dans les questionnaires pour saisir la date à laquelle une procédure a été effectuée. La sémantique spécifique et prévue peut être précisée dans un modèle. Par exemple : la date et/ou l'heure réelle ; l'heure de début et de fin de la procédure ; l'intervalle de temps pendant lequel la procédure a été effectuée ; la durée de la procédure ; l'âge de l'individu au moment de la procédure ; ou la durée écoulée depuis qu'elle a eu lieu. Une date partielle est valable, en utilisant le type de données DV_DATE_TIME, pour enregistrer seulement une année."
-          },
-          "at0038" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0038",
-            "text" : "Inconnu",
-            "description" : ""
-          },
-          "at0039" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0039",
-            "text" : "Inconnu",
-            "description" : ""
-          },
-          "at0040" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0040",
-            "text" : "Détails supplémentaires",
-            "description" : "Détails ou questions structurées sur le dépistage des procédures."
-          },
-          "at0041" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0041",
-            "text" : "Description",
-            "description" : "Description narrative des antécédents de toute procédure antérieure pertinente pour l'objectif du dépistage."
-          },
-          "at0042" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0042",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0043" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0043",
-            "text" : "*Unsure (en)",
-            "description" : ""
-          },
-          "at0002.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0002",
-            "text" : "Tout événement",
-            "description" : "Par défaut, point dans le temps non spécifié ou événement d'intervalle qui peut être explicitement défini dans un modèle ou au moment de l'exécution."
-          },
-          "at0037.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0037",
-            "text" : "Timing",
-            "description" : "Moment de la procédure.",
-            "comment" : "Indication du moment de l'enquête Commentaire : L'élément de données \"Timing\" a été délibérément modélisé de manière souple afin de prendre en charge la myriade de façons dont il peut être utilisé dans les questionnaires pour saisir la date à laquelle une procédure a été effectuée. La sémantique spécifique et prévue peut être précisée dans un modèle. Par exemple : la date et/ou l'heure réelle ; l'heure de début et de fin de la procédure ; l'intervalle de temps pendant lequel la procédure a été effectuée ; la durée de la procédure ; l'âge de l'individu au moment de la procédure ; ou la durée écoulée depuis qu'elle a eu lieu. Une date partielle est valable, en utilisant le type de données DV_DATE_TIME, pour enregistrer seulement une année."
-          },
-          "at0004.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0004",
-            "text" : "Nom de la procédure",
-            "description" : "Nom d'une procédure ou d'un groupe de procédures.",
-            "comment" : "Dans la mesure du possible, il est préférable de coder le \"nom de la procédure\" à l'aide d'une terminologie."
-          },
-          "at0025.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0025",
-            "text" : "Commentaire",
-            "description" : "Description supplémentaire de la question de procédure spécifique, qui n'est pas saisie dans d'autres champs."
-          },
-          "at0005.2" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0005",
-            "text" : "*Carried out? (en)",
-            "description" : "*Is there a history of the identified procedure being done or carried out? (en)",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0028.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0028",
-            "text" : "Y a-t-il eu des procédures antérieures ?",
-            "description" : "Existe-t-il des antécédents de procédures antérieures en rapport avec l'objectif du dépistage ?",
-            "comment" : "Dans un modèle, l'élément de données est généralement renommé en fonction de la question spécifique posée. L'ensemble de valeurs proposé peut être adapté à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour répondre à chaque cas d'utilisation spécifique."
-          },
-          "at0041.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0041",
-            "text" : "Description",
-            "description" : "Description narrative des antécédents de toute procédure antérieure pertinente pour l'objectif du dépistage."
-          },
-          "at0034.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0034",
-            "text" : "Objectif du dépistage",
-            "description" : "Le contexte ou la raison du dépistage.",
-            "comment" : "Cet élément de données est destiné à fournir un contexte de collecte pour les groupes de questions/réponses lors d'une interrogation ultérieure. Il n'est pas prévu que cet élément de données soit exposé à l'individu, mais seulement stocké dans les données. Par exemple : la sélection préalable à l'admission ou le nom du questionnaire proprement dit."
           }
         }
       },
@@ -8755,7 +7371,39 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "2DA8D7203A5D77C1F7FC457712754ED5"
       },
-      "details" : { }
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere gjeldende status og detaljer om episoder hvor individet har brukt antikonsepsjon, og hvilke typer.",
+          "keywords" : [ "prevensjonsmiddel, hormon, prevensjon, fødsel, kontroll, svangerskapsprevensjon, familieplanlegging, prevensjonstiltak, kontrasepsjon, spiral, p-pille, hormonspiral, kondom" ],
+          "use" : "Brukes for å registrere gjeldende status og detaljer om episoder hvor individet har brukt antikonsepsjon, og hvilke typer.\r\n\r\nDenne arketypen skal brukes til å registrere informasjon om både nåværende og tidligere bruk av antikonsepsjon.\r\n\r\nArketypen fokuserer spesifikt på dokumentasjon om bruken av alle typer antikonsepsjon, inkludert episoder der mer enn en type antikonsepsjon kan ha blitt brukt samtidig.\r\n\r\nClusteret 'Per type' gjør det mulig å registrere spesifikke detaljer og episoder om hver type antikonsepsjon som brukes, og kan bare gjentas en gang per type.\r\n\r\nI mange situasjoner vil den enkelte bare bruke én type antikonsepsjon om gangen. Imidlertid, hvis andre typer antikonsepsjon brukes samtidig, registreres detaljene i en annen forekomst av clusteret 'Per type'.\r\n\r\nFor hver type antikonsepsjon kan brukshistorikken over tid registreres ved hjelp av det repeterbare clusteret \"Per episode\". Dette clusteret gjør det mulig å registrere et veldig detaljert bruksmønster for antikonsepsjon, om nødvendig.\r\n\r\nDataelementet \"Overordnet beskrivelse\" kan brukes til å overføre fritekstbeskrivelser fra eksisterende eller tidligere kliniske systemer til arketypeformat.",
+          "misuse" : "Brukes ikke til å registrere detaljert informasjon om reseptbelagte medisiner. Lenker fra denne arketypen til den aktuelle \"Legemiddelordinering\" (INSTRUCTION.medication_order) eller \"Legemiddelhåndtering\" (ACTION.medication) bør brukes til å registrere detaljene.\r\n\r\nBrukes ikke til å registrere detaljert informasjon om prosedyrene som er utført. Lenker fra denne arketypen til den aktuelle \"Prosedyre\" (ACTION.procedure) skal brukes til å registrere detaljene.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record the current status and episodic details about specific types of contraception used by an individual.",
+          "keywords" : [ "contraceptive", "hormone", "contraception", "control", "family planning", "birth control measures" ],
+          "use" : "Use to record the current status and episodic details about specific types of contraception used by an individual.\r\n\r\nThis archetype is to be used to record information about both current and previous use of contraception.\r\n\r\nThe specific scope of this archetype is on overall documentation about the use of all types of contraception, including episodes where more than one type of contraception may have been used simultaneously.\r\n\r\nThe 'Per type' cluster of data elements allows for recording of specific details and episodes about each type of contraception used and can be repeated only once per type. \r\n\r\nIn many situations the individual will use only one type of contraception at a time. However, if other types of contraception are used at the same time, the details will be recorded in another instance of the 'Per type' cluster.\r\n\r\nFor each type of contraception the history of use over time can be captured using the repeatable 'Per episode' cluster. This cluster of data elements allows for a very detailed pattern of contraception use to be recorded, if necessary.\r\n\r\nUse to incorporate the narrative descriptions of contraceptive history within existing or legacy clinical systems into an archetyped format, using the 'Overall description' data element.",
+          "misuse" : "Not to be used to record detailed information about the medication prescription. Links from this archetype to the relevant INSTRUCTION.medication_order or ACTION.medication should be used to record the detail.\r\n\r\nNot to be used to record detailed information about the procedures performed, such as an IUD insertion or a vasectomy. Links from this archetype to the relevant ACTION.procedure should be used to record the detail.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-EVALUATION.contraceptive_summary.v1",
     "differential" : true,
@@ -8888,16 +7536,7 @@
                   "rmTypeName" : "ELEMENT",
                   "occurrences" : "0..0",
                   "nodeId" : "at0148.1",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "value",
-                    "children" : [ {
-                      "@type" : "C_COMPLEX_OBJECT",
-                      "rmTypeName" : "DV_DATE_TIME",
-                      "attributes" : [ ],
-                      "attributeTuples" : [ ]
-                    } ]
-                  } ],
+                  "attributes" : [ ],
                   "attributeTuples" : [ ]
                 }, {
                   "@type" : "C_COMPLEX_OBJECT",
@@ -8911,16 +7550,7 @@
                   "rmTypeName" : "ELEMENT",
                   "occurrences" : "0..0",
                   "nodeId" : "at0149.1",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "value",
-                    "children" : [ {
-                      "@type" : "C_COMPLEX_OBJECT",
-                      "rmTypeName" : "DV_DATE_TIME",
-                      "attributes" : [ ],
-                      "attributeTuples" : [ ]
-                    } ]
-                  } ],
+                  "attributes" : [ ],
                   "attributeTuples" : [ ]
                 }, {
                   "@type" : "C_COMPLEX_OBJECT",
@@ -8971,13 +7601,6 @@
           }
         },
         "nb" : {
-          "at0144" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0144",
-            "text" : "Status",
-            "description" : "Utsagn om nåværende bruk for den spesifiserte antikonsepsjonen.",
-            "comment" : "Designkommentar:  Du kan ha mens selv om du bruker hormonspiral.\nher bør det kunne velges både hormonspiral og mens mønster.  "
-          },
           "ac0.1" : {
             "@type" : "ARCHETYPE_TERM",
             "text" : "*(Synthesized) (en)",
@@ -9808,7 +8431,54 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "F4A2E815E6303035B5BC6CDB11F100FC"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Aufzeichnung einer Aussage oder Feststellung über den Schwangerschaftsstatus einer Person, die nur zum Zeitpunkt der Feststellung als richtig anzusehen ist.",
+          "keywords" : [ "Schwangerschaft, schwanger, Ausschluss" ],
+          "use" : "*Use to record a statement or declaration about the pregnancy status of the individual at a specific point in time. \r\n\r\nThis data group is very deliberately defined as the recording of an assertion, a careful clinical statement made by a clinician about whether they believe, based on their best knowledge, that an individual is pregnant or not pregnant.\r\n\r\n‘May be pregnant’ is not usually offered as a value, much less recorded in the health record, as this is every clincian’s default assumption for any woman of child-bearing age, until proven otherwise. \r\n\r\nAsserting that an individual is pregnant is relatively straightforward and safe to do on the basis of evidence such as a positive urine or blood test or physical examination findings. Typically, the consequences of an error in this scenario lead to overly cautious treatment choices, which are unlikely to cause clinical harm. However, the opposite situation where a clinician needs to assert that an individual who has been assigned as female at birth is not pregnant is often not a straightforward or safe determination. Incorrectly asserting that the individual is not pregnant can have significant clinical consequences if it results in clinical management choices that can cause harm to a pregnant woman or to the fetus in an unrecognised pregnancy.\r\n\r\nAbsolute exclusion of pregnancy is possible only in limited cases, such as after the confirmed absence or removal of both ovaries and the uterus. In most other situations, clinicians can only make a determination of ‘not pregnant’ based on a combination of history taking, physical examination, diagnostic testing and clinical judgment. Any statement of pregnancy exclusion should include the clinician’s rationale or justification, which may reference contemporaneous test results, an organ inventory or a past history of diagnoses and procedures.\r\n\r\nAn assertion should be considered accurate only at the time of assertion. For example, an assertion that an individual is pregnant is needed to diagnose an ectopic pregnancy, however they should no longer be pregnant following surgery. Similarly, an assertion that an individual is not pregnant, based on history taking and a urine pregnancy test result, may need to be revised shortly after if a blood test for pregnancy returns positive. (en)",
+          "misuse" : "*Not to be used to record summary information about a single pregnancy. Use the EVALUATION.pregnancy_summary archetype for this purpose.\r\n\r\nNot to be used to record the phase of an active pregnancy, such as preconception, pregnant, or postpartum. Use the EVALUATION.pregnancy_phase archetype for this purpose.\r\n\r\nNot to be used to record details about procedures performed during a pregnancy, for example terminations or deliveries. Use the ACTION.procedure or other relevant archetypes for this purpose.\r\n\r\nNot to be used in the context of questionnaire-style representations, such as self-reported data with questions like 'Are you pregnant?'. Use the openEHR-EHR-OBSERVATION.problem_screening.v1 or other relevant archetypes for this purpose. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "Å registrere et utsagn om graviditetsstatusen til en person, som kun skal anses som nøyaktig på datoen og tidspunktet for utsagnet.",
+          "keywords" : [ "graviditet, gravid, ekskludering, utelukkelse" ],
+          "use" : "Brukes til å registrere et utsagn om graviditetsstatusen til individet på et bestemt tidspunkt.\r\n\r\nDenne typen data er spesifikt definert som registrering av et utsagn, en nøye klinisk uttalelse fra en kliniker om hvorvidt de tror, ​​basert på deres beste kunnskap, at en person er gravid eller ikke gravid.\r\n\r\n\"Kan være gravid\" tilbys vanligvis ikke som en verdi, langt mindre registrert i helsejournalen, da dette er en klinikers antakelse for enhver kvinne i fertil alder, inntil det motsatte er bevist.\r\n\r\nÅ hevde at en person er gravid er relativt enkelt og trygt å gjøre på grunnlag av bevis som en positiv urin- eller blodprøve eller fysiske undersøkelse. Vanligvis fører konsekvensene av en feil i dette scenariet til svært forsiktige behandlingsvalg, som neppe vil forårsake klinisk skade. Imidlertid er den motsatte situasjonen hvor en kliniker trenger å hevde at en person som ble født som kvinne ikke er gravid, ofte ikke er en enkel eller sikker avgjørelse. Feil utsagn om at individet ikke er gravid kan ha betydelige kliniske konsekvenser dersom det resulterer i kliniske valg som kan skade en gravid kvinne eller fosteret i et ukjent svangerskap.\r\n\r\nAbsolutt utelukkelse av graviditet er bare mulig i begrensede tilfeller, for eksempel etter bekreftet fjerning av både eggstokkene og livmoren. I de fleste andre situasjoner kan klinikere bare ta en avgjørelse om \"ikke gravid\" basert på en kombinasjon av anamnese, fysisk undersøkelse, diagnostisk testing og klinisk vurdering. Enhver erklæring om utelukkelse av graviditet bør inkludere klinikerens begrunnelse, som kan referere til samtidige testresultater, manglende organ eller en tidligere historie med diagnoser og prosedyrer.\r\n\r\nEt utsagn bør kun anses som nøyaktig på tidspunktet for utsagnet. For eksempel er et utsagn om at en person er gravid nødvendig for å diagnostisere en graviditet utenfor livmoren, men personen bør ikke lenger være gravide etter en operasjon. På samme måte kan et utsagn om at en person ikke er gravid, basert på anamnese og et uringraviditetstestresultat, måtte revideres kort tid etter hvis en blodprøve for graviditet returnerer positiv.",
+          "misuse" : "Skal ikke brukes til å registrere sammendrag om en enkelt graviditet. Bruk arketypen EVALUATION.pregnancy_summary til dette formålet.\r\n\r\nSkal ikke brukes til å registrere fasen av en graviditet, slik som før unnfangelsen, graviditeten eller etter fødselen. Bruk arketypen EVALUATION.pregnancy_phase til dette formålet.\r\n\r\nSkal ikke brukes til å registrere detaljer om prosedyrer utført under en graviditet, for eksempel avbrudd eller fødsel. Bruk ACTION.prosedyren eller andre relevante arketyper for dette formålet.\r\n\r\nSkal ikke brukes i sammenheng med spørreskjema for eksempel selvrapporterte data med spørsmål som \"Er du gravid?\". Bruk openEHR-EHR-OBSERVATION.problem_screening.v1 eller andre relevante arketyper for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record a statement or declaration about the pregnancy status of the individual, which is to be considered accurate only at the date and time of assertion.",
+          "keywords" : [ "pregnancy, pregnant, exclusion," ],
+          "use" : "Use to record a statement or declaration about the pregnancy status of the individual at a specific point in time. \r\n\r\nThis data group is very deliberately defined as the recording of an assertion, a careful clinical statement made by a clinician about whether they believe, based on their best knowledge, that an individual is pregnant or not pregnant.\r\n\r\n‘May be pregnant’ is not usually offered as a value, much less recorded in the health record, as this is every clincian’s default assumption for any woman of child-bearing age, until proven otherwise. \r\n\r\nAsserting that an individual is pregnant is relatively straightforward and safe to do on the basis of evidence such as a positive urine or blood test or physical examination findings. Typically, the consequences of an error in this scenario lead to overly cautious treatment choices, which are unlikely to cause clinical harm. However, the opposite situation where a clinician needs to assert that an individual who has been assigned as female at birth is not pregnant is often not a straightforward or safe determination. Incorrectly asserting that the individual is not pregnant can have significant clinical consequences if it results in clinical management choices that can cause harm to a pregnant woman or to the fetus in an unrecognised pregnancy.\r\n\r\nAbsolute exclusion of pregnancy is possible only in limited cases, such as after the confirmed absence or removal of both ovaries and the uterus. In most other situations, clinicians can only make a determination of ‘not pregnant’ based on a combination of history taking, physical examination, diagnostic testing and clinical judgment. Any statement of pregnancy exclusion should include the clinician’s rationale or justification, which may reference contemporaneous test results, an organ inventory or a past history of diagnoses and procedures.\r\n\r\nAn assertion should be considered accurate only at the time of assertion. For example, an assertion that an individual is pregnant is needed to diagnose an ectopic pregnancy, however they should no longer be pregnant following surgery. Similarly, an assertion that an individual is not pregnant, based on history taking and a urine pregnancy test result, may need to be revised shortly after if a blood test for pregnancy returns positive.",
+          "misuse" : "Not to be used to record summary information about a single pregnancy. Use the EVALUATION.pregnancy_summary archetype for this purpose.\r\n\r\nNot to be used to record the phase of an active pregnancy, such as preconception, pregnant, or postpartum. Use the EVALUATION.pregnancy_phase archetype for this purpose.\r\n\r\nNot to be used to record details about procedures performed during a pregnancy, for example terminations or deliveries. Use the ACTION.procedure or other relevant archetypes for this purpose.\r\n\r\nNot to be used in the context of questionnaire-style representations, such as self-reported data with questions like 'Are you pregnant?'. Use the openEHR-EHR-OBSERVATION.problem_screening.v1 or other relevant archetypes for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-OBSERVATION.pregnancy_finding.v0",
     "differential" : true,
@@ -9992,7 +8662,98 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "942CF0FB3C54F2949348CF29B1DD1E2D"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Schaffung von Rahmenbedingungen für die Darstellung von Antworten auf vordefinierte Screening-Fragen zu Beschwerden, Problemen oder Diagnosen.",
+          "keywords" : [ "Erkrankung, Zustand, Krankheit, Syndrom, Fragebogen, Befragung, Screening, Problem" ],
+          "use" : "Verwendung als Rahmenbedingung für die Darstellung von Antworten auf vordefinierte Screening-Fragen zu Beschwerden, Problemen oder Diagnosen.\r\n\r\nHäufige Anwendungsfälle umfassen, sind aber nicht beschränkt auf:\r\nSystematische Befragung in jedem Beratungsgespräch, zum Beispiel:\r\n--- Wurde eine Krebserkrankung diagnostiziert? Ja, Nein, Unbekannt.\r\n--- Wurde COVID 19 oder Influenza in den vergangenen zwölf Monaten diagnostiziert? Ja, Nein, Unbekannt.\r\n--- Haben Sie irgendwelche Sorgen oder Problemen? Ja, Nein, Unbekannt.\r\n- Spezifische Befragungen in Bezug auf Krankheitsüberwachung.\r\n\r\nDie Semantiken dieses Archetyps sind mit Absicht vage und diesen Archetyp abzufragen würde üblicherweise nur sinnvoll und sicher im Kontext vom einzelnen spezifischen Template sein. In einem Template würde jedes Daten Element in eine der spezifisch gestellten Fragen umbenannt werden. Wenn Gruppen an Werten für übliche Anwendungsfälle bereits vorgeschlagen wurden, können diese für den lokalen Gebrauch mit Hilfe der \"Text\"- Auswahl an den jeweiligen spezifischen Anwendungsfall angepasst werden.\r\n\r\nÜber die EVENT-Struktur aus dem Referenzmodell kann festgelegt werden, ob sich die Fragen auf einen Zeitpunkt oder einen Zeitraum beziehen. Verwenden Sie eine separate Instanz dieses Archetyps, um zwischen einer Befragung zu unterscheiden, der Informationen über eine Diagnose enthält, die zu einem beliebigen Zeitpunkt in der Vergangenheit aufgetreten war, und Informationen über eine Diagnose, die innerhalb eines bestimmten Zeitintervalls auftrat - zum Beispiel den Unterschied zwischen \"Hatten Sie Influenza?\" und \"Hatten Sie in den vergangenen 4 Wochen Influenza?\".\r\n\r\nDie Quelle der Informationen in einer Fragebogenantwort kann in verschiedenen Kontexten variieren, kann jedoch mithilfe des Elements „Information provider“ im Referenzmodell spezifisch identifiziert werden.\r\n\r\nDieser Archetyp wurde entwickelt, um als Screening-Tool oder zur Darstellung einfacher Daten im Fragebogenformat zur Verwendung in Situationen wie einem Krankheitsregister verwendet zu werden. Wenn der Screening-Fragebogen das Vorhandensein eines Problems oder einer Diagnose identifiziert, wird empfohlen, dass das klinische System die spezifischen Details über das Problem oder die Diagnose (wie z. B. das Datum der klinischen Feststellung) unter Verwendung des Archetyps EVALUATION.problem_diagnosis darstellt und beibehält.",
+          "misuse" : "Darf nicht verwendet werden, um Details zum Vorhanden oder Nicht-Vorhanden eines Problems oder einer Diagnose außerhalb eines Screening-Kontexts darzustellen. Dafür EVALUATION.problem_diagnosis oder EVALUATION.exclusion_specific benutzen.\r\n\r\nDarf nicht verwendet werden, um ein Framework für die Darstellung von Antworten auf vordefinierte Screening-Fragen zu Prozeduren, die in der Vergangenheit durchgeführt wurden, zu erstellen. Dafür OBSERVATION.procedure_screening benutzen.\r\n\r\nDarf nicht verwendet werden, um ein Framework für die Darstellung von Antworten auf vordefinierte Screening-Fragen zu Nebenwirkungen (Adverse Reactions) zu erstellen. Dafür einen angemessenen Archetyp benutzen.\r\n\r\nDarf nicht verwendet werden, um Details zu einer einfachen Auswahlliste darzustellen, in der eine Frage entweder als \"vorhanden\" oder \"unbestimmt\" aufgezeichnet werden kann. Verwenden Sie dazu OBSERVATION.selection_list.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å lage et rammeverk for registrering av svar på forhåndsdefinerte spørsmål om bekymringer, plager, problemer eller diagnoser.",
+          "keywords" : [ "tilstand, sykdom, syndrom, spørreskjema, kartlegging, bekymring, plage" ],
+          "use" : "Brukes for å lage et rammeverk for registrering av svar på forhåndsdefinerte spørsmål om bekymringer, plager, problemer eller diagnoser.\r\nArketypen er løst modellert for å inkludere det bredeste spekteret av bekymringer, plager og problemer, samt diagnoser.\r\n\r\nVanlige bruksområder inkluderer, men er ikke begrenset til:\r\n- Systematiske spørsmål ved konsultasjoner, for eksempel:\r\n--- Diagnostisert med kreft? Ja, Nei, Ukjent.\r\n--- Diagnostisert med Covid 19 eller influensa de siste tolv månedene? Ja, Nei, Ukjent.\r\n- Spesifikke spørsmål relatert til overvåkning av sykdommer.\r\n\r\nSemantikken til denne arketypen er med vilje løst definert, og spørringer etter data i denne arketypen vil normalt bare være hensiktsmessig eller sikkert i konteksten av det spesifikke templatet. I et templat vil hvert dataelement vanligvis døpes om til det (spesifikke) spørsmålet man ønsker svar på. Flere steder er det foreslått verdisett som passer til de vanligste bruksområder, men det er allikevel mulig å tilpasse/endre verdisett for lokal bruk ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN for å harmonere verdisettet til hvert enkelt brukstilfelle.\r\n\r\nEVENT-strukturen fra arketypens referansemodell kan brukes for å spesifisere om spørsmålene relateres til et tidspunkt eller til et tidsintervall.\r\nBruk egne instanser av denne arketypen for å skille mellom spørsmål om prosedyrer som er gjennomførte på et hvilket som helst tidspunkt og spørsmål om prosedyrer som er gjennomført i et tidsintervall. For eksempel; \"Har du influensa?\" sammenlignet med \"Har du hatt influensa de siste 4 ukene?\".\r\n\r\nKilden til informasjonen i et spørreskjema kan variere i ulike kontekster, men kan identifiseres spesifikt ved å benytte \"Information provider\" elementet i openEHR referansemodellen.\r\n\r\nDenne arketypen er laget for å bli brukt i et spørreskjema eller for å registrere enkle strukturerte data til for eksempel et sykdomsregister. Dersom det i kartleggingen identifiseres at et problem eller en diagnose er tilstede, anbefales det at spesifikke detaljer om problemet eller diagnosen (som for eksempel diagnosedato) registreres og lagres i pasientjournalen i arketypen EVALUATION.problem_diagnosis (Problem/diagnose).",
+          "misuse" : "Brukes ikke for å registrere detaljer om tilstedeværelse eller fravær av et problem eller en diagnose utenfor konteksten av kartleggingen. Bruk arketypen EVALUATION.problem_diagnosis eller EVALUATION.exclusion_specific for dette formålet.\r\n\r\nBrukes ikke for å lage et rammeverk for registrering av svar på forhåndsdefinerte spørsmål om gjennomførte prosedyrer, bruk arketypen OBSERVATION.procedure_screening for dette formålet.\r\n\r\nBrukes ikke for å lage et rammeverk for registrering av svar på forhåndsdefinerte spørsmål om overfølsomhetsreaksjoner, bruk arketypen OBSERVATION.adverse_reaction_screening for dette formålet.\r\n\r\nBrukes ikke for å registrere detaljer om en enkel utvalgsliste der et spørsmål kan registreres som enten \"Tilstede\" eller \"Ubestemt\". Bruk arketypen OBSERVATION.selection_list for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To create a framework for recording answers to pre-defined screening questions about issues, problems or diagnoses.",
+          "keywords" : [ "Condition, state, illness, syndrome, questionnaire, screening, issue" ],
+          "use" : "Use to create a framework for recording answers to pre-defined screening questions about issues, problems or diagnoses. \r\nThis archeype has deliberately been loosely modelled to be inclusive of the broadest range of issues and problems, as well as diagnoses.\r\n\r\nCommon use cases include, but are not limited to:\r\n- Systematic questioning in any consultation, for example:\r\n--- Diagnosed with cancer? Yes, No, Unknown.\r\n--- Diagnosed with COVID 19 or Influenza in the past twelve months? Yes, No, Unknown.\r\n--- Do you have any worries or concerns? Yes, No, Unknown.\r\n- Specific questioning related to disease surveillance.\r\n\r\nThe semantics of this archetype are intentionally loose, and querying this archetype would normally only be useful or safe within the context of each specific template. In a template, each data element would usually be renamed to the specific question asked. Where value sets have been proposed for common use cases, these can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case.\r\n\r\nThe EVENT structure from the reference model can be used to specify whether the questions relate to point in time or over a period of time. Use a separate instance of this archetype to distinguish between a questionnaire recording information about a procedure that has been performed at any time in the past and information about a procedure performed within a specified time interval - for example the difference between \"Do you have influenza?\" compared to \"Have you had influenza in the past 4 weeks?\"\r\n\r\nThe source of the information in a questionnaire response may vary in different contexts but can be specifically identified using the 'Information provider' element in the Reference Model.\r\n\r\nThis archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening questionnaire identifies the presence of a problem or diagnosis, it is recommended that clinical system record and persist the specific details about the problem or diagnosis (such as the date of clinical recognition) using the EVALUATION.problem_diagnosis archetype.",
+          "misuse" : "Not to be used to record details about the presence or absence of a problem or diagnosis, outside of a screening context. Use EVALUATION.problem_diagnosis or EVALUATION.exclusion_specific for these purposes.\r\n\r\nNot to be used to to create a framework for recording answers to pre-defined screening questions about procedures that has been carried out in the past. Use the OBSERVATION.procedure_screening for this purpose.\r\n\r\nNot to be used to to create a framework for recording answers to pre-defined screening questions about adverse reactions, use an appropriate archetype for this purpose.\r\n\r\nNot to be used to record details about a simple selection list where a question may be recorded as either \"present\" or \"indeterminate\". Use OBSERVATION.selection_list for this purpose.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "Créer un cadre pour l'enregistrement des réponses à des questions de dépistage prédéfinies concernant des questions, des problèmes ou des diagnostics.",
+          "keywords" : [ "Condition", "état", "maladie", "syndrome", "questionnaire", "dépistage", "problème" ],
+          "use" : "À utiliser pour créer un cadre permettant d'enregistrer les réponses à des questions prédéfinies sur les enjeux, les problèmes ou les diagnostics. \r\nCet archétype a été délibérément modélisé de manière souple afin d'englober le plus large éventail possible de questions et de problèmes, ainsi que de diagnostics.\r\n\r\nLes cas d'utilisation les plus courants sont, entre autres, les suivants\r\n- L'interrogation systématique lors d'une consultation, par exemple :\r\n--- Diagnostic de cancer ? Oui, Non, Inconnu.\r\n--- Diagnostic de COVID 19 ou de grippe au cours des douze derniers mois ? Oui, Non, Inconnu.\r\n--- Avez-vous des inquiétudes ou des préoccupations ? Oui, Non, Inconnu.\r\n- Questions spécifiques liées à la surveillance des maladies.\r\n\r\nLa sémantique de cet archétype est volontairement floue, et l'interrogation de cet archétype ne serait normalement utile ou sûre que dans le contexte de chaque modèle spécifique. Dans un modèle, chaque élément de données est généralement renommé en fonction de la question spécifique posée. Lorsque des ensembles de valeurs ont été proposés pour des cas d'utilisation courants, ils peuvent être adaptés à un usage local en utilisant les types de données DV_TEXT ou DV_BOOLEAN pour correspondre à chaque cas d'utilisation spécifique.\r\n\r\nLa structure EVENT du modèle de référence peut être utilisée pour spécifier si les questions se rapportent à un moment donné ou à une période de temps. Utilisez une instance distincte de cet archétype pour faire la distinction entre un questionnaire enregistrant des informations sur une procédure effectuée à tout moment dans le passé et des informations sur une procédure effectuée dans un intervalle de temps spécifié - par exemple la différence entre \"Avez-vous la grippe ?\" et \"Avez-vous eu la grippe au cours des 4 dernières semaines ?\"\r\n\r\nLa source des informations contenues dans une réponse à un questionnaire peut varier selon le contexte, mais elle peut être spécifiquement identifiée à l'aide de l'élément \"Fournisseur d'informations\" du modèle de référence.\r\n\r\nCet archétype a été conçu pour être utilisé comme outil de dépistage ou pour enregistrer des données simples sous forme de questionnaire en vue d'une utilisation dans des situations telles qu'un registre des maladies. Si le questionnaire de dépistage identifie la présence d'un problème ou d'un diagnostic, il est recommandé que le système clinique enregistre et conserve les détails spécifiques du problème ou du diagnostic (tels que la date de reconnaissance clinique) en utilisant l'archétype EVALUATION.problem_diagnosis.",
+          "misuse" : "Ne doit pas être utilisé pour créer un cadre permettant d'enregistrer des réponses à des questions de dépistage prédéfinies concernant des procédures qui ont été effectuées dans le passé. Utilisez OBSERVATION.procedure_screening à cette fin.\r\n\r\nNe pas utiliser pour créer un cadre permettant d'enregistrer des réponses à des questions de sélection prédéfinies sur les effets indésirables, utiliser un archétype approprié à cet effet.\r\n\r\nNe pas utiliser pour enregistrer les détails d'une simple liste de sélection où une question peut être enregistrée comme \"présente\" ou \"indéterminée\". Utilisez OBSERVATION.selection_list à cette fin.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "purpose" : "Crear una infraestructura per a registrar respostes a les preguntes de detecció predefinides sobre qüestions, problemes o diagnòstics.",
+          "keywords" : [ "Condició", "estat", "malaltia", "síndrome", "sondeig", "detecció", "qüestió" ],
+          "use" : "Utilitzar per a crear una infraestructura per a registrar respostes a les preguntes de detecció predefinides sobre qüestions, problemes o diagnòstics. \r\n\r\nAquest arquetip s'ha modelat deliberadament amb poca exactitud perquè incloure un rang el més ampli possible de qüestions i preguntes, així com de diagnòstics. \r\n\r\nEls casos d’ús més freqüents, però no limitats a: \r\n\r\n-Preguntar sistemàticament en qualsevol consulta. Per exemple: \r\n\r\n---Diagnosticat amb càncer? Sí, No, Desconegut. \r\n\r\n---Diagnosticat amb COVID 19o grip en els últims dotze mesos? Sí, No, Desconegut. \r\n\r\n---Té alguna preocupació? Sí, No, Desconegut. \r\n\r\n-Sondeig específic relacionat amb la vigilància de malalties. \r\n\r\nLa semàntica d’aquest arquetip és intencionalment laxa, i consultar aquest arquetip només serà útil o segur dins del context de cada plantilla específica. En una plantilla, cada element de dades normalment es tornarà a nomenar en una pregunta específica. Quan s’hagi proposat els conjunts de valors per casos d’ús comú, aquests poden adaptar-se per al seu ús local utilitzant DV_TEXT o DV_BOOLEAN per ajustar-se a cada cas d’ús específic. \r\n\r\nL'estructura EVENT del model de referència es pot utilitzar per especificar si les preguntes estan relacionades a un moment donat o a un període de temps. Utilitzar una instància separada d’aquest arquetip per a distingir entre un sondeig que registra informació sobre un procediment que s’ha realitzat en qualsevol moment del passat i la informació sobre un procediment dins d’un interval de temps específic. Per exemple, la diferència entre “Vostè té grip?” comparat amb “Vostè ha tingut grip en les últimes 4 setmanes?” \r\n\r\nLa font d’informació en una resposta al sondeig pot variar en diferents contexts, però es pot identificar utilitzant l’element “Proveïdor d’informació” del Model de Referència. \r\n\r\nAquest arquetip s’ha dissenyat per a utilitzar-lo com ferramenta de detecció o per a registrar dades senzilles en format de sondeig per al seu ús en situacions com un registre de malalties. Si el sondeig de detecció identifica la presència d’un problema o diagnòstic, es recomana que es registri el sistema clínic i continuï els detalls específics sobre el problema o diagnòstic (com la data de reconeixement clínic), utilitzant l’arquetip EVALUATION.problem_diagnosis.",
+          "misuse" : "No utilitzar per a registrar detalls sobre la presència o absència d'un problema o diagnòstic fora del context de l'objectiu de detecció. Utilitzar EVALUATION.problem_diagnosis o EVALUATION.exclusion_specific per aquest propòsit. \r\n\r\nNo utilitzar per a crear una infraestructura per a registrar respostes a les preguntes de detecció predefinides sobre els procediments que s'han realitzat en el passat. Utilitzar OBSERVATION.procedure_screening per aquest propòsit. \r\n\r\nNo utilitzar per a crear una infraestructura per a registrar respostes a les preguntes de detecció predefinides sobre reaccions adverses. Utilitzar un arquetip apropiat per aquest propòsit. \r\n\r\nNo utilitzar per a registrar dades sobre una llista de selecció simple on una pregunta es pot enregistrar tant com \"\"present\"\" o \"\"indeterminada\"\". Utilitzar OBSERVATION.selection_list per aquest propòsit.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nl"
+          },
+          "purpose" : "*To create a framework for recording answers to pre-defined screening questions about problems or diagnoses.(en)",
+          "keywords" : [ "*Condition, state, illness, syndrome, questionnaire, screening, issue (en)" ],
+          "use" : "*Use to create a framework for recording answers to pre-defined screening questions about issues, problems or diagnoses. \r\nThis archeype has deliberately been loosely modelled to be inclusive of the broadest range of issues and problems, as well as diagnoses.\r\n\r\nCommon use cases include, but are not limited to:\r\n- Systematic questioning in any consultation, for example:\r\n--- Diagnosed with cancer? Yes, No, Unknown.\r\n--- Diagnosed with COVID 19 or Influenza in the past twelve months? Yes, No, Unknown.\r\n--- Do you have any worries or concerns? Yes, No, Unknown.\r\n- Specific questioning related to disease surveillance.\r\n\r\nThe semantics of this archetype are intentionally loose, and querying this archetype would normally only be useful or safe within the context of each specific template. In a template, each data element would usually be renamed to the specific question asked. Where value sets have been proposed for common use cases, these can be adapted for local use by using the 'text' choice to match each specific use case.\r\n\r\nThe EVENT structure from the reference model can be used to specify whether the questions relate to point in time or over a period of time. Use a separate instance of this archetype to distinguish between a questionnaire recording information about a procedure that has been performed at any time in the past and information about a procedure performed within a specified time interval - for example the difference between \"Do you have influenza?\" compared to \"Have you had influenza in the past 4 weeks?\"\r\n\r\nThe source of the information in a questionnaire response may vary in different contexts but can be specifically identified using the 'Information provider' element in the Reference Model.\r\n\r\nThis archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening questionnaire identifies the presence of a problem or diagnosis, it is recommended that clinical system record and persist the specific details about the problem or diagnosis (such as the date of clinical recognition) using the EVALUATION.problem_diagnosis archetype. (en)",
+          "misuse" : "*Not to be used to record details about the presence or absence of a problem or diagnosis, outside of a screening context. Use EVALUATION.problem_diagnosis or EVALUATION.exclusion_specific for these purposes.\r\n\r\nNot to be used to to create a framework for recording answers to pre-defined screening questions about procedures that has been carried out in the past. Use the OBSERVATION.procedure_screening for this purpose.\r\n\r\nNot to be used to to create a framework for recording answers to pre-defined screening questions about adverse reactions, use an appropriate archetype for this purpose.\r\n\r\nNot to be used to record details about a simple selection list where a question may be recorded as either \"present\" or \"indeterminate\". Use OBSERVATION.selection_list for this purpose. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-OBSERVATION.problem_screening.v1",
     "differential" : true,
